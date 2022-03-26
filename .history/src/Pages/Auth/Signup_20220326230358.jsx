@@ -13,18 +13,6 @@ const Signup = () => {
         text="First Name"
       />
       <Input
-        id="lastName"
-        type="lastName"
-        placeholder="Last Name"
-        text="Last Name"
-      />
-      <Input
-        id="email"
-        type="text"
-        placeholder="prakash@gmail.com"
-        text="Email address:"
-      />
-      <Input
         id="password"
         type="password"
         placeholder="******"
@@ -39,7 +27,7 @@ const Signup = () => {
             name="remember2"
             value="unchecked"
           />
-          <label>
+          <label for="remember2">
             <b>I accept all terms & conditions</b>
           </label>
         </div>

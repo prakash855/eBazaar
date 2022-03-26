@@ -39,7 +39,7 @@ const Signup = () => {
             name="remember2"
             value="unchecked"
           />
-          <label>
+          <label for="remember2">
             <b>I accept all terms & conditions</b>
           </label>
         </div>

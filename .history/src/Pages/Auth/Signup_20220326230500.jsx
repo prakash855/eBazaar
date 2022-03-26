@@ -23,12 +23,14 @@ const Signup = () => {
         type="text"
         placeholder="prakash@gmail.com"
         text="Email address:"
+        labelFor="email"
       />
       <Input
         id="password"
         type="password"
         placeholder="******"
         text="password:"
+        labelFor="password"
       />
 
       <div className="auth_text flex">
@@ -39,7 +41,7 @@ const Signup = () => {
             name="remember2"
             value="unchecked"
           />
-          <label>
+          <label for="remember2">
             <b>I accept all terms & conditions</b>
           </label>
         </div>
