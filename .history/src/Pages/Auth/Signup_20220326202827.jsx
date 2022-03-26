@@ -1,12 +1,12 @@
 import React from "react";
-import AuthLayout from "../../Components/AuthLayout";
-import { LinkButton, SubmitButton, TextButton } from "../../Components/Button";
 import Input from "../../Components/Input";
-import "./Auth.css";
+import { SubmitButton, TextButton } from "../../Components/Button";
+import AuthLayout from "../../Components/AuthLayout";
 
-const Login = () => {
+const Signup = () => {
   return (
-    <AuthLayout text="Login">
+    <AuthLayout>
+      {/* <div className="content_subheading_heading auth_head">Signup</div> */}
       <Input
         id="email"
         type="text"
@@ -14,6 +14,7 @@ const Login = () => {
         text="Email address:"
         labelFor="email"
       />
+
       <Input
         id="password"
         type="password"
@@ -31,17 +32,14 @@ const Login = () => {
             value="unchecked"
           />
           <label for="remember2">
-            <b>Remember me</b>
+            <b>I accept all terms & conditions</b>
           </label>
         </div>
-        <span>
-          <LinkButton text="Forgot your password?" />
-        </span>
       </div>
-      <SubmitButton text="Login" />
-      <TextButton text="Create New Account >" />
+      <SubmitButton text="Create New Account" />
+      <TextButton text="Already have an account >" />
     </AuthLayout>
   );
 };
 
-export default Login;
+export default Signup;

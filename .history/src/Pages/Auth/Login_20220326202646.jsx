@@ -6,7 +6,9 @@ import "./Auth.css";
 
 const Login = () => {
   return (
-    <AuthLayout text="Login">
+    <AuthLayout>
+      <div className="content_subheading_heading auth_head">Login</div>
+
       <Input
         id="email"
         type="text"
@@ -14,6 +16,7 @@ const Login = () => {
         text="Email address:"
         labelFor="email"
       />
+
       <Input
         id="password"
         type="password"

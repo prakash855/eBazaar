@@ -7,6 +7,7 @@ import "./Auth.css";
 const Login = () => {
   return (
     <AuthLayout text="Login">
+
       <Input
         id="email"
         type="text"
@@ -14,6 +15,7 @@ const Login = () => {
         text="Email address:"
         labelFor="email"
       />
+
       <Input
         id="password"
         type="password"
