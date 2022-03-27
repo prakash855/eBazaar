@@ -30,6 +30,12 @@ const Signup = () => {
         placeholder="******"
         text="password:"
       />
+      <Input
+        id="confirmPassword"
+        type="confirmPassword"
+        placeholder="******"
+        text="confirm password:"
+      />
 
       <div className="auth_text flex">
         <div>
