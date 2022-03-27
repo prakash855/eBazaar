@@ -2,8 +2,10 @@ import React from "react";
 import Input from "../../Components/Input";
 import { SubmitButton, TextButton } from "../../Components/Button";
 import AuthLayout from "../../Components/AuthLayout";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
   return (
     <AuthLayout text="Signup">
       <Input
@@ -51,7 +53,10 @@ const Signup = () => {
         </div>
       </div>
       <SubmitButton text="Create New Account" />
-      <TextButton text="Already have an account >" />
+      <TextButton
+        redirects={() => navigate("/login")}
+        text="Already have an account >"
+      />
     </AuthLayout>
   );
 };

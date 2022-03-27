@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import AuthLayout from "../../Components/AuthLayout";
 import { LinkButton, SubmitButton, TextButton } from "../../Components/Button";
 import Input from "../../Components/Input";
 import "./Auth.css";
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <AuthLayout text="Login">
       <Input
@@ -39,7 +41,7 @@ const Login = () => {
         </span>
       </div>
       <SubmitButton text="Login" />
-      <TextButton text="Create New Account >" />
+      <TextButton redirects={() => navigate("/signup")} text="Create New Account >" />
     </AuthLayout>
   );
 };
