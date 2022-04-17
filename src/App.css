@@ -1,51 +1,28 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #22201c;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.brand-title {
-  font-size: 3rem;
-  color: #d9d9d9;
-}
-
-.brand-title span {
-  color: #ffde59;
-}
-
-.brand-description {
-  font-size: 1.4rem;
-}
-
-.links {
-  display: flex;
+.ecomContainer {
+  padding-top: 5rem;
+  background: #D8D5E2;
 }
 
 .links a {
   color: #d9d9d9;
   font-size: 1.2rem;
   margin: 1rem;
+}
+
+.card_with_badge, .card_image {
+  width: 18rem;
+  background: var(--white);
+}
+
+.card_with_badge{
+  justify-content: space-evenly;
+}
+
+.card_price{
+  padding: 0.5rem 0;
+}
+
+.rates{
+  justify-content: space-between;
+  align-items: center;
 }

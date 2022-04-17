@@ -1,0 +1,44 @@
+.ecomfooter {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--secondary-color);
+}
+
+.aboutFooter {
+  flex: 3;
+  gap: 1rem;
+  justify-content: space-evenly;
+  padding: 1rem 0;
+}
+
+.aboutContainer {
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.contactFooter {
+  flex: 2;
+  padding: 1rem 0;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.aboutHead {
+  font-weight: 600;
+}
+
+.footer_lists {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.developer_details {
+  padding: 1rem;
+  justify-content: space-evenly;
+  background-color: var(--light-color);
+}
+
+.developer {
+  font-weight: 500;
+}
