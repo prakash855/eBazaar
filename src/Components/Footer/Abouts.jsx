@@ -5,8 +5,10 @@ const Abouts = ({ title, items }) => {
     <div className="aboutContainer flex">
       <div className="aboutHead left_aligned">{title}</div>
       <div className="aboutList">
-        {items.map((item) => (
-          <p className="footer_lists left_aligned">{item}</p>
+        {items.map((item, id) => (
+          <p key={id} className="footer_lists left_aligned">
+            {item}
+          </p>
         ))}
       </div>
     </div>

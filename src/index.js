@@ -4,18 +4,18 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
-import { ContextProvider } from "./Contexts/StateContext/StateContext";
+import { ProductContext } from "./Contexts/StateContext/StateContext";
 
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <ContextProvider>
+    <ProductContext>
       <Router>
         <App />
       </Router>
-    </ContextProvider>
+    </ProductContext>
   </React.StrictMode>,
   document.getElementById("root")
 );

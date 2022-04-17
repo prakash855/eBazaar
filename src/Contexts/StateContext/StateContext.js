@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const StateContext = createContext();
 
-const ContextProvider = ({ children }) => {
+const ProductContext = ({ children }) => {
   const [state, setState] = useState([]);
   useEffect(() => {
     (async () => {
@@ -24,4 +24,4 @@ const ContextProvider = ({ children }) => {
 
 const useDataContext = () => useContext(StateContext);
 
-export { ContextProvider, useDataContext };
+export { ProductContext, useDataContext };

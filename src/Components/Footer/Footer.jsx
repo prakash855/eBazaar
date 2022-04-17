@@ -8,8 +8,8 @@ const Footer = () => {
     <div>
       <footer className="ecomfooter">
         <div className="aboutFooter flex">
-          {data.map((item) => (
-            <Abouts items={item.items} title={item.title} />
+          {data.map((item, id) => (
+            <Abouts key={id} items={item.items} title={item.title} />
           ))}
         </div>
         <div className="contactFooter flex">

@@ -11,12 +11,12 @@ const Home = () => {
   const state = useDataContext();
   return (
     <Container>
-      <img class="responsive_image" src={eComPicture} alt="product"></img>
-      <div class="content_heading">
+      <img className="responsive_image" src={eComPicture} alt="product"></img>
+      <div className="content_heading">
         <div className="center_aligned">New Arrivals</div>
       </div>
       <div className="allProducts flex">
-        {state?.map((item) => item.newArrivals && <ProductCard {...item} />)}
+        {state?.map((item) => item.newArrivals && <ProductCard key={item._id} {...item} />)}
       </div>
     </Container>
   );
