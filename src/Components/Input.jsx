@@ -2,13 +2,13 @@ import React from "react";
 
 const Input = ({ id, type, placeholder, text }) => {
   return (
-    <div>
+    <div className="left_aligned">
       <label>
         <b>{text}</b>
       </label>
       <div className="nav_input auth_input">
         <input
-          className="input input_wide shadow"
+          className="input input_wide"
           id={id}
           type={type}
           placeholder={placeholder}

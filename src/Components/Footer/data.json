@@ -1,0 +1,40 @@
+[
+  {
+    "items": [
+      "Contact Us",
+      "Abous Us",
+      "Careers",
+      "eBazaar Stories",
+      "Press",
+      "eBazaar wholesale",
+      "Coprorate Information"
+    ],
+    "title": "About"
+  },
+  {
+    "items": [
+      "Payments",
+      "Shopping",
+      "Cancellations & Returns",
+      "FAQ",
+      "Report Infringement"
+    ],
+    "title": "Help"
+  },
+  {
+    "items": [
+      "Return Policy",
+      "Terms Of Use",
+      "Security",
+      "Privacy",
+      "Sitemap",
+      "ERP Compliance",
+      "Coprorate Information"
+    ],
+    "title": "Policy"
+  },
+  {
+    "items": ["Facebook", "Twitter", "YouTube"],
+    "title": "Social"
+  }
+]
