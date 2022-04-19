@@ -12,9 +12,9 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <ProductContext>
-      <Router>
-        <App />
-      </Router>
+        <Router>
+          <App />
+        </Router>
     </ProductContext>
   </React.StrictMode>,
   document.getElementById("root")

@@ -4,6 +4,7 @@ import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import API from "./Components/MockMan/MockMan";
 import { Login, Signup, Cart, Home, WishList } from "./Pages/index";
+import ProductListing from "./Pages/ProductListing/ProductListing";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<WishList />} />
+        <Route path="/products" element={<ProductListing />} />
         <Route path="/mockman" element={<API />} />
       </Routes>
       <Footer />
