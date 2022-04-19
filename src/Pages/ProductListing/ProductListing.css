@@ -1,0 +1,41 @@
+.filter_and_Clear {
+  justify-content: space-between;
+}
+
+.range_input {
+  width: 100%;
+}
+.ranges {
+  justify-content: space-between;
+}
+.product_category {
+  flex-direction: column;
+}
+.product_rating {
+  flex-direction: column;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 0.5rem;
+  width: 17%;
+}
+
+.filter_type {
+  margin-bottom: 0.5rem;
+}
+
+.content {
+  grid-gap: 1.4rem;
+  height: auto;
+  padding: 0;
+}
+
+.products_head {
+  position: relative;
+  top: 4rem;
+}
+
+.container {
+  top: 3rem;
+}

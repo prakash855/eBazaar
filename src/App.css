@@ -1,28 +1,41 @@
 .ecomContainer {
-  padding-top: 5rem;
-  background: #D8D5E2;
+  padding: 4.2rem 0;
+  background: var(--backgroung);
 }
 
 .links a {
-  color: #d9d9d9;
   font-size: 1.2rem;
   margin: 1rem;
 }
 
-.card_with_badge, .card_image {
-  width: 18rem;
+.card_with_badge,
+.card_image {
+  width: 17rem;
   background: var(--white);
 }
 
-.card_with_badge{
+.card_with_badge {
   justify-content: space-evenly;
+  margin: 0;
+  gap: 0;
+  padding-bottom: 0.4rem;
 }
 
-.card_price{
+.card_price {
   padding: 0.5rem 0;
 }
 
-.rates{
+.rates {
   justify-content: space-between;
   align-items: center;
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+
+/* variables defined */
+
+:root {
+  --backgroung: #d8d5e2;
 }

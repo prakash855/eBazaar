@@ -1,5 +1,4 @@
 import React from "react";
-import MacBook from "../assets/macbook.jpg";
 
 const ProductCard = ({
   title,
@@ -29,7 +28,7 @@ const ProductCard = ({
             Add to Cart
           </button>
           <div className="flex">
-            <i class="rated rating bi bi-star-fill"></i>
+            <i class="rated rating bi bi-star-fill"></i> &nbsp;
             <small>{rating}/5</small>
           </div>
         </div>
