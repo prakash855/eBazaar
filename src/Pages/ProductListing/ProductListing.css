@@ -17,8 +17,8 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 1rem 0;
+  grid-gap: 0.5rem;
+  width: 17%;
 }
 
 .filter_type {
