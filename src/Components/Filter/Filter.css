@@ -1,5 +1,6 @@
 .filter_and_Clear {
   justify-content: space-between;
+  align-items: center;
 }
 
 .range_input {
@@ -40,9 +41,12 @@
   top: 3rem;
 }
 
-.loader{
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  height: 100vh !important;
+.range_define {
+  justify-content: space-between;
+}
+
+.dark_link {
+  position: relative;
+  bottom: 3px;
+  font-size: 15px;
 }
