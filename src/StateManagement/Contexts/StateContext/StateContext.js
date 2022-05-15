@@ -46,7 +46,7 @@ const ProductContext = ({ children }) => {
 
   // filter by price Range
   const filterByPriceRange = getFileterByPriceRange(filterByRating, priceRange);
-  
+
   //filered data
   const filteredProducts = filterByPriceRange;
 

@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import {
   CLEAR_FILTER,
   FILTER_BY_RANGE,
@@ -12,11 +11,12 @@ import { useDataContext } from "../../StateManagement/Contexts/StateContext/Stat
 import "./Filter.css";
 
 const Filter = () => {
-  const [range, setRange] = useState(10000);
   const { state, dispatch, uniqueCategory } = useDataContext();
   const {
     filters: { priceRange, maxPrice },
   } = state;
+
+  console.log(state)
 
   return (
     <div className="sidebar">

@@ -47,9 +47,9 @@ export const StateReducer = (state, action) => {
         filters: {
           ...state.filters,
           sortBy: null,
-          priceRange: 1000,
-          categoryName: [],
           rating: null,
+          categoryName: [],
+          priceRange: 900,
         },
       };
 
@@ -63,12 +63,11 @@ export const StateReducer = (state, action) => {
       };
 
     case PRICE_RANGE:
-      console.log(priceRange);
       return {
         ...state,
         filters: {
           ...state.filters,
-          priceRange: payload,
+          priceRange: Number(payload),
         },
       };
 
@@ -84,18 +83,24 @@ export const StateReducer = (state, action) => {
       }
 
     case GET_CATEGORY:
-      console.log(state,payload)
-      if (state.filters.categoryName.includes(payload)) {
-        return {
-          ...state,
-          filters: {
-            ...state.filters,
-            categoryName: [...state.filters.categoryName].filter(
-              (category) => category !== payload
-            ),
-          },
-        };
-      }
+      console.log(state, payload);
+      return state.filters.categoryName.includes(payload)
+        ? {
+            ...state,
+            filters: {
+              ...state.filters,
+              categoryName: state.filters.categoryName.filter(
+                (category) => category !== payload
+              ),
+            },
+          }
+        : {
+            ...state,
+            filters: {
+              ...state.filters,
+              categoryName: state.filters.categoryName.concat(payload),
+            },
+          };
 
     default:
       return state;
