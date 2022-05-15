@@ -7,8 +7,7 @@ import { useDataContext } from "../../StateManagement/Contexts/StateContext/Stat
 import "./ProductListing.css";
 
 const ProductListing = () => {
-  const { state, filteredProducts } = useDataContext();
-  console.log(filteredProducts)
+  const { filteredProducts } = useDataContext();
   return (
     <Container>
       <section className="container flex">

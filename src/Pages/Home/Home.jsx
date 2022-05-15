@@ -18,7 +18,7 @@ const Home = () => {
       <div style={{ position: "relative" }}>
         <button
           onClick={() => navigate("/products")}
-          class="btn dark_btn centered"
+          className="btn dark_btn centered"
         >
           Shop Now
         </button>

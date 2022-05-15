@@ -41,6 +41,12 @@
   top: 3rem;
 }
 
-.range_define{
+.range_define {
   justify-content: space-between;
+}
+
+.dark_link {
+  position: relative;
+  bottom: 3px;
+  font-size: 15px;
 }

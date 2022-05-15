@@ -16,15 +16,13 @@ const Filter = () => {
     filters: { priceRange, maxPrice },
   } = state;
 
-  console.log(state)
-
   return (
     <div className="sidebar">
       <div className="filter_and_Clear flex">
         <b className="filter_type">Filter</b>
         <button
           onClick={() => dispatch({ type: CLEAR_FILTER })}
-          class="btn btn_link dark_link"
+          className="btn btn_link dark_link"
         >
           Clear
         </button>

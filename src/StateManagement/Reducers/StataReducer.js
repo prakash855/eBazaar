@@ -83,7 +83,6 @@ export const StateReducer = (state, action) => {
       }
 
     case GET_CATEGORY:
-      console.log(state, payload);
       return state.filters.categoryName.includes(payload)
         ? {
             ...state,
