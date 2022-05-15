@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import Container from "../../Components/Container";
 import ProductCard from "../../Components/ProductCard";
 import "./Home.css";
-import { useDataContext } from "../../Contexts/StateContext/StateContext";
+import { useDataContext } from "../../StateManagement/Contexts/StateContext/StateContext";
 
 import eComPicture from "../../assets/ecommerce.jpg";
 import { useNavigate } from "react-router-dom";
+import { getNewArrivals } from "../../Utilities/getNewArrivals";
 
 const Home = () => {
   const navigate = useNavigate();
-  const state = useDataContext();
+  const { state } = useDataContext();
+  const { products } = state;
+
   return (
     <Container>
       <div style={{ position: "relative" }}>
@@ -26,9 +28,9 @@ const Home = () => {
         <div className="center_aligned">New Arrivals</div>
       </div>
       <div className="allProducts flex">
-        {state?.map(
-          (item) => item.newArrivals && <ProductCard key={item._id} {...item} />
-        )}
+        {getNewArrivals(products)?.map((item) => (
+          <ProductCard key={item._id} {...item} />
+        ))}
       </div>
     </Container>
   );
