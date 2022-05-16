@@ -11,10 +11,10 @@ const Signup = () => {
   const [error, setError] = useState("");
   const [checked, setChecked] = useState(true);
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
     email: "",
     password: "",
+    firstName: "",
+    lastName: "",
   });
 
   const submitHandler = () => {
@@ -22,10 +22,9 @@ const Signup = () => {
     if (regex.test(formData.email)) {
       try {
         (async () => {
-          const { data: encodedToken } = await axios.post(
-            "/api/auth/signup",
-            user
-          );
+          const {
+            data: { encodedToken },
+          } = await axios.post("/api/auth/signup", user);
           localStorage.setItem("signedUp_token", encodedToken);
           console.log(encodedToken);
 
@@ -36,12 +35,12 @@ const Signup = () => {
             email: "",
             password: "",
           });
-        },
-        [])();
+        })();
       } catch (error) {
+        console.log(error);
         const {
           data: { errors },
-        } = error.essage;
+        } = error.message;
         setError(...errors);
       }
     } else if (!regex.test(formData.email)) {

@@ -29,7 +29,7 @@ const Login = () => {
             data: { foundUser, encodedToken },
           } = await axios.post("/api/auth/login", formData);
 
-          status === 200 ? loggedMessage(foundUser) : null;
+          status === 200 ? console.log("success") : null;
 
           localStorage.setItem("token", encodedToken);
           localStorage.getItem("user", foundUser);
@@ -39,6 +39,7 @@ const Login = () => {
 
           if (encodedToken) navigate("/products");
         } catch (error) {
+          console.log(error);
           const {
             data: { errors },
           } = error.response;
