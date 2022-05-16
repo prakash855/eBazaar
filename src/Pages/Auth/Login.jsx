@@ -6,7 +6,6 @@ import { LinkButton, SubmitButton, TextButton } from "../../Components/Button";
 import Input from "../../Components/Input";
 import { useAuth } from "../../StateManagement/Contexts/AuthContext/AuthContext";
 import { regex } from "../../Utilities/regex";
-import "react-toastify/dist/ReactToastify.css";
 import "./Auth.css";
 
 const Login = () => {
