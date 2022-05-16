@@ -24,7 +24,7 @@ const Footer = () => {
       <div className="developer_details flex flex-center">
         <div className="developer">Made By Prakash</div>
         <a href="https://github.com/prakash855/eBazaar" target="_blank">
-          <i class="bi bi-github"></i>
+          <i className="bi bi-github"></i>
         </a>
       </div>
     </>

@@ -87,7 +87,7 @@ const Login = () => {
       />
 
       {/* Error on wrong credentials */}
-      <div class="small_text error_msg">{error.split(".")[0]}</div>
+      <div className="small_text error_msg">{error.split(".")[0]}</div>
 
       <div className="auth_text flex">
         <label>
