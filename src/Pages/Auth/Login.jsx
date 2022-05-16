@@ -6,7 +6,6 @@ import { LinkButton, SubmitButton, TextButton } from "../../Components/Button";
 import Input from "../../Components/Input";
 import { useAuth } from "../../StateManagement/Contexts/AuthContext/AuthContext";
 import { regex } from "../../Utilities/regex";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Auth.css";
 
@@ -20,11 +19,6 @@ const Login = () => {
   const testCredentials = {
     email: "prakash@gmail.com",
     password: "pra123",
-  };
-
-  const loggedMessage = (foundUser) => {
-    const { firstName, lastName } = foundUser;
-    toast.success(`Welcome ${firstName} ${lastName}`);
   };
 
   const logInHandler = () => {
@@ -58,7 +52,6 @@ const Login = () => {
 
   return (
     <AuthLayout text="Login">
-      <ToastContainer />
       <Input
         onChange={(e) =>
           setFormData((prevState) => ({ ...prevState, email: e.target.value }))
