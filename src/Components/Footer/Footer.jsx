@@ -5,7 +5,7 @@ import data from "./data.json"; // Dummy Data
 
 const Footer = () => {
   return (
-    <div>
+    <>
       <footer className="ecomfooter">
         <div className="aboutFooter flex">
           {data.map((item, id) => (
@@ -27,7 +27,7 @@ const Footer = () => {
           <i class="bi bi-github"></i>
         </a>
       </div>
-    </div>
+    </>
   );
 };
 

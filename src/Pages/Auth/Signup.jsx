@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Input from "../../Components/Input";
 import { SubmitButton, TextButton } from "../../Components/Button";
 import AuthLayout from "../../Components/AuthLayout";
@@ -6,6 +6,14 @@ import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+
   return (
     <AuthLayout text="Signup">
       <Input
@@ -61,4 +69,4 @@ const Signup = () => {
   );
 };
 
-export {Signup};
+export { Signup };

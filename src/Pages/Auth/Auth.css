@@ -36,3 +36,11 @@
 .auth_btn {
   font-size: 0.9rem;
 }
+
+.error_msg_blank {
+  visibility: hidden;
+}
+
+.error_msg {
+  color: var(--red);
+}
