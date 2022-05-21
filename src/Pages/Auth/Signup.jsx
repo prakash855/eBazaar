@@ -5,8 +5,11 @@ import AuthLayout from "../../Components/AuthLayout";
 import { useNavigate } from "react-router-dom";
 import { regex } from "../../Utilities/regex";
 import axios from "axios";
+import { SIGNUP_API } from "../../Constants";
+import { useDocumentTitle } from "../../Hooks/useDocumentTitle";
 
 const Signup = () => {
+  useDocumentTitle("Signup")
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [checked, setChecked] = useState(true);
@@ -24,7 +27,7 @@ const Signup = () => {
         (async () => {
           const {
             data: { encodedToken },
-          } = await axios.post("/api/auth/signup", user);
+          } = await axios.post(SIGNUP_API, user);
           localStorage.setItem("signedUp_token", encodedToken);
           console.log(encodedToken);
 

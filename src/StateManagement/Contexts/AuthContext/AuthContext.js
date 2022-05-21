@@ -7,7 +7,7 @@ const AuthContextProvider = ({ children }) => {
   const getUser = localStorage.getItem("user");
 
   const [token, setToken] = useState(getToken || "");
-  const [user, setUser] = useState(getUser || "");
+  const [user, setUser] = useState(JSON.parse(getUser) || "");
 
   const logOut = () => {
     setToken("");

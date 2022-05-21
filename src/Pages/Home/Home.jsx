@@ -7,8 +7,10 @@ import { useDataContext } from "../../StateManagement/Contexts/StateContext/Stat
 import eComPicture from "../../assets/ecommerce.jpg";
 import { useNavigate } from "react-router-dom";
 import { getNewArrivals } from "../../Utilities/getNewArrivals";
+import { useDocumentTitle } from "../../Hooks/useDocumentTitle";
 
 const Home = () => {
+  useDocumentTitle("");
   const navigate = useNavigate();
   const { state } = useDataContext();
   const { products } = state;

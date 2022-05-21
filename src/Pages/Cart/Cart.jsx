@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import CartCard from "../../Components/CartCard/CartCard";
 
 const Cart = () => {
-  return (
-    <div>Cart</div>
-  )
-}
+  return <CartCard />;
+};
 
-export {Cart}
+export { Cart };
