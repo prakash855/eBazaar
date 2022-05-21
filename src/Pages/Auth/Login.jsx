@@ -4,11 +4,14 @@ import { useNavigate } from "react-router-dom";
 import AuthLayout from "../../Components/AuthLayout";
 import { LinkButton, SubmitButton, TextButton } from "../../Components/Button";
 import Input from "../../Components/Input";
+import { LOG_API } from "../../Constants";
+import { useDocumentTitle } from "../../Hooks/useDocumentTitle";
 import { useAuth } from "../../StateManagement/Contexts/AuthContext/AuthContext";
 import { regex } from "../../Utilities/regex";
 import "./Auth.css";
 
 const Login = () => {
+  useDocumentTitle("Login")
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
@@ -27,15 +30,16 @@ const Login = () => {
           const {
             status,
             data: { foundUser, encodedToken },
-          } = await axios.post("/api/auth/login", formData);
+          } = await axios.post(LOG_API, formData);
 
           status === 200 ? console.log("success") : null;
 
           localStorage.setItem("token", encodedToken);
-          localStorage.getItem("user", foundUser);
+          localStorage.setItem("user", JSON.stringify(foundUser));
 
           setToken(encodedToken);
           setUser(foundUser);
+          console.log(foundUser);
 
           if (encodedToken) navigate("/products");
         } catch (error) {

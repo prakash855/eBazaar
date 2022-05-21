@@ -39,3 +39,7 @@
 :root {
   --backgroung: #d8d5e2;
 }
+
+.cursor {
+  cursor: pointer;
+}

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useReducer } from "react";
+import { PRODUCTS_API } from "../../../Constants";
 // utilities
 import { getFilterByCategory } from "../../../Utilities/filterByCategory";
 import { getFileterByPriceRange } from "../../../Utilities/filterByRange";
@@ -55,7 +56,7 @@ const ProductContext = ({ children }) => {
       try {
         const {
           data: { products },
-        } = await axios.get(`api/products`);
+        } = await axios.get(PRODUCTS_API);
 
         dispatch({
           type: GET_PRODUCTS,

@@ -1,17 +1,30 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../StateManagement/Contexts/AuthContext/AuthContext";
+import { useCart } from "../StateManagement/Contexts/CartContext/CartContext";
 
-const ProductCard = ({
-  title,
-  price,
-  discountPrice,
-  discountPercent,
-  imgURL,
-  rating,
-}) => {
+import * as AiIcons from "react-icons/ai";
+
+const ProductCard = (product) => {
+  const { title, price, discountPrice, discountPercent, imgURL, rating } =
+    product;
+
+  const {
+    addToCart,
+    state: { cart },
+  } = useCart();
+
+  const { token } = useAuth();
+  const navigate = useNavigate();
+
+  const addToCartHandler = (product) => {
+    addToCart(product);
+  };
+
   return (
     <div className="card_with_badge flex shadow">
       <div className="card_badge flex">
-        <i className="bi bi-suit-heart"></i>
+        <AiIcons.AiFillHeart />
       </div>
       <div className="">
         <img className="card_image" src={imgURL} alt="" />
@@ -22,14 +35,32 @@ const ProductCard = ({
           ₹{discountPrice}&nbsp; <del className="deleted">₹{price}</del>&nbsp;
           <span className="highlights card_deal">{discountPercent}% OFF</span>
         </div>
+
         <div className="flex rates">
-          <button className="btn btn_icon warning_btn flex flex-center">
-            <i className="i_btn bi bi-cart"></i>
-            Add to Cart
-          </button>
+          {cart.find((theProduct) => theProduct._id === product._id) ? (
+            <button
+              onClick={() => {
+                navigate("/cart");
+              }}
+              className="btn btn_icon dark_btn flex flex-center"
+            >
+              <i className="i_btn bi bi-cart"></i>
+              View Cart
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                token ? addToCartHandler(product) : navigate("/login");
+              }}
+              className="btn btn_icon warning_btn flex flex-center"
+            >
+              <i className="i_btn bi bi-cart"></i>
+              Add to Cart
+            </button>
+          )}
           <div className="flex">
             <i className="rated rating bi bi-star-fill"></i> &nbsp;
-            <small>{rating}/5</small>
+            <h5>{rating}/5</h5>
           </div>
         </div>
       </div>

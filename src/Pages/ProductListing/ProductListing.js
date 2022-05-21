@@ -3,11 +3,14 @@ import { RotatingLines } from "react-loader-spinner";
 import Container from "../../Components/Container";
 import Filter from "../../Components/Filter/Filter";
 import ProductCard from "../../Components/ProductCard";
+import { useDocumentTitle } from "../../Hooks/useDocumentTitle";
 import { useDataContext } from "../../StateManagement/Contexts/StateContext/StateContext";
 import "./ProductListing.css";
 
 const ProductListing = () => {
+  useDocumentTitle("Products");
   const { filteredProducts } = useDataContext();
+
   return (
     <Container>
       <section className="container flex">

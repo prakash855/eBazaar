@@ -22,7 +22,7 @@ const Filter = () => {
         <b className="filter_type">Filter</b>
         <button
           onClick={() => dispatch({ type: CLEAR_FILTER })}
-          className="btn btn_link dark_link"
+          className="btn btn_link dark_link cursor"
         >
           Clear
         </button>
