@@ -80,7 +80,7 @@ const CartCard = () => {
             <small className="center_aligned">
               you will save ₹{priceFormatter(-getDiscount)} on this order
             </small>
-            <button className="btn primary_btn">Place order</button>
+            <button className="btn dark_btn">Checkout</button>
           </div>
         )}
       </section>
