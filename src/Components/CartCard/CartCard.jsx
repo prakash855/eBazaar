@@ -12,9 +12,6 @@ const CartCard = () => {
   useDocumentTitle("Cart");
   const {
     state: { cart },
-    incrementCartQuantity,
-    decrementCartQuantity,
-    deleteCartQuantity,
   } = useCart();
 
   // get total price
