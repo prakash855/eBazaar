@@ -22,13 +22,17 @@ const CartItem = (product) => {
         <div className="content_text mycart_inc_dec flex">
           Quantity:
           <i
-            onClick={() => decrementCartQuantity(product, `decrement`)}
-            className="bi bi-dash-circle"
+            onClick={() =>
+              qty > 1 && decrementCartQuantity(product, `decrement`)
+            }
+            className={
+              qty > 1 ? `bi bi-dash-circle cursor` : `bi bi-dash-circle`
+            }
           ></i>
           <b>{qty}</b>
           <i
             onClick={() => incrementCartQuantity(product, `increment`)}
-            className="bi bi-plus-circle"
+            className="bi bi-plus-circle cursor"
           ></i>
         </div>
         <div className="btn_mycart flex">

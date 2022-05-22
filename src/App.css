@@ -43,3 +43,7 @@
 .cursor {
   cursor: pointer;
 }
+
+.card_badge:hover {
+  background: none;
+}

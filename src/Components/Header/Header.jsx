@@ -4,13 +4,20 @@ import * as AiIcons from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../StateManagement/Contexts/CartContext/CartContext";
 import { useAuth } from "../../StateManagement/Contexts/AuthContext/AuthContext";
+import { useWishList } from "../../StateManagement/Contexts/WishListContext/WishListContext";
 
 const Header = () => {
   const navigate = useNavigate();
   const { token, logOut } = useAuth();
+
   const {
     state: { cart },
   } = useCart();
+
+  const {
+    state: { wishList },
+  } = useWishList();
+
   return (
     <div className="navigation flex shadow">
       <div onClick={() => navigate("/")} className="nav_head cursor">
@@ -37,7 +44,9 @@ const Header = () => {
           className="icons"
         >
           <i className="bi bi-suit-heart icon_sm"></i>
-          <span className="badge badge_small flex flex-center">4</span>
+          <span className="badge badge_small flex flex-center">
+            {wishList?.length}
+          </span>
         </div>
         <div
           onClick={() => (token ? navigate("/cart") : navigate("/login"))}
