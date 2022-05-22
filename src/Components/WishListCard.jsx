@@ -6,7 +6,7 @@ import { useCart } from "../StateManagement/Contexts/CartContext/CartContext";
 import * as AiIcons from "react-icons/ai";
 import { useWishList } from "../StateManagement/Contexts/WishListContext/WishListContext";
 
-const ProductCard = (product) => {
+const WishListCard = (product) => {
   const { title, price, discountPrice, discountPercent, imgURL, rating } =
     product;
 
@@ -15,11 +15,7 @@ const ProductCard = (product) => {
     state: { cart },
   } = useCart();
 
-  const {
-    state: { wishlist },
-    addToWishList,
-    removeFromWishList,
-  } = useWishList();
+  const { removeFromWishList } = useWishList();
 
   const { token } = useAuth();
   const navigate = useNavigate();
@@ -28,21 +24,17 @@ const ProductCard = (product) => {
     addToCart(product);
   };
 
-  const addToWishListHandler = (product) => addToWishList(product);
-
   return (
     <div className="card_with_badge flex shadow">
       <div className="card_badge flex">
-        {wishlist?.find((theProduct) => theProduct._id === product._id) ? (
-          <AiIcons.AiFillHeart
-            style={{ color: "red", border: "1px solid red" }}
-            onClick={() => removeFromWishList(product)}
-          />
-        ) : (
-          <AiIcons.AiOutlineHeart
-            onClick={() => addToWishListHandler(product)}
-          />
-        )}
+        <div
+          onClick={() => removeFromWishList(product)}
+          class="card_badge flex"
+        >
+          <button class="btn_float round flex flex-center">
+            <AiIcons.AiOutlineDelete />
+          </button>
+        </div>
       </div>
       <div className="">
         <img className="card_image" src={imgURL} alt="" />
@@ -68,7 +60,7 @@ const ProductCard = (product) => {
           ) : (
             <button
               onClick={() => {
-                token ? addToCartHandler(product) : navigate("/login");
+                addToCartHandler(product);
               }}
               className="btn btn_icon warning_btn flex flex-center"
             >
@@ -86,4 +78,4 @@ const ProductCard = (product) => {
   );
 };
 
-export default ProductCard;
+export default WishListCard;
