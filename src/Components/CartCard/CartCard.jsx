@@ -56,7 +56,7 @@ const CartCard = () => {
                   ? `(${cart?.length} items)`
                   : `(${cart?.length} item)`}
               </div>
-              <div className="price_amount">₹{priceFormatter(getTotalMRP)}</div>
+              <div className="price_amount">₹{priceFormatter(getTotalPrice)}</div>
             </div>
 
             <div className="mycart_price flex">
@@ -73,7 +73,7 @@ const CartCard = () => {
               <div className="mycart_price flex">
                 <div className="price_name">Total Amount</div>
                 <div className="price_amount">
-                  ₹{priceFormatter(getTotalPrice)}
+                  ₹{priceFormatter(getTotalMRP)}
                 </div>
               </div>
             </b>

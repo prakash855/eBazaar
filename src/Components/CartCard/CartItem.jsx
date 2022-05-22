@@ -16,7 +16,7 @@ const CartItem = (product) => {
       <div className="card_detail">
         <div className="card_name">{title}</div>
         <div className="card_price">
-          ₹{price}&nbsp; <del className="deleted">₹{discountPrice}</del>&nbsp;
+          ₹{discountPrice}&nbsp; <del className="deleted">₹{price}</del>&nbsp;
           <span className="highlights card_deal">24% OFF</span>
         </div>
         <div className="content_text mycart_inc_dec flex">
