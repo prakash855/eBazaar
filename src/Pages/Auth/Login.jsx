@@ -61,7 +61,7 @@ const Login = () => {
           setFormData((prevState) => ({ ...prevState, email: e.target.value }))
         }
         id="email"
-        type="text"
+        type="email"
         placeholder="prakash@gmail.com"
         text="Email address:"
         labelFor="email"
