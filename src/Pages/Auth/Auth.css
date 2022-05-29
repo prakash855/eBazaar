@@ -6,7 +6,7 @@
 
 .auth {
   padding: 2rem;
-  width: 30%;
+  margin: 0.5rem;
   justify-content: space-between;
   flex-direction: column;
 }
@@ -43,4 +43,11 @@
 
 .error_msg {
   color: var(--red);
+}
+
+@media (max-width: 760px) {
+  .nav_actions,
+  .ecomfooter {
+    display: none;
+  }
 }

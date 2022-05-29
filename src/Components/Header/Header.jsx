@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import * as AiIcons from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../StateManagement/Contexts/CartContext/CartContext";
 import { useAuth } from "../../StateManagement/Contexts/AuthContext/AuthContext";
 import { useWishList } from "../../StateManagement/Contexts/WishListContext/WishListContext";
+import ResponsiveMenu from "./ResponsiveMenu";
 
 const Header = () => {
+  const [showResponsiveMenu, setShowResponsiveMenu] = useState(false);
   const navigate = useNavigate();
   const { token, logOut } = useAuth();
 
@@ -20,6 +22,10 @@ const Header = () => {
 
   return (
     <div className="navigation flex shadow">
+      <AiIcons.AiOutlineMenu
+        className="resp-nav-icons"
+        onClick={() => setShowResponsiveMenu(!showResponsiveMenu)}
+      />
       <div onClick={() => navigate("/")} className="nav_head cursor">
         eBazaar
       </div>
@@ -65,6 +71,9 @@ const Header = () => {
           />
         )}
       </div>
+      {showResponsiveMenu && (
+        <ResponsiveMenu setShowResponsiveMenu={setShowResponsiveMenu} />
+      )}
     </div>
   );
 };
